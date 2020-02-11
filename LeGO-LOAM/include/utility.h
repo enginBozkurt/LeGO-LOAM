@@ -108,25 +108,26 @@ extern const int imuQueLength = 200;
 
 extern const float sensorMountAngle = 0.0;
 extern const float segmentTheta = 60.0/180.0*M_PI; // decrese this value may improve accuracy
-extern const int segmentValidPointNum = 5;
-extern const int segmentValidLineNum = 3;
+extern const int segmentValidPointNum = 3;  //change
+extern const int segmentValidLineNum = 2;   //change
 extern const float segmentAlphaX = ang_res_x / 180.0 * M_PI;
 extern const float segmentAlphaY = ang_res_y / 180.0 * M_PI;
 
 
 extern const int edgeFeatureNum = 2;
-extern const int surfFeatureNum = 4;
+extern const int surfFeatureNum = 3;    //change
 extern const int sectionsTotal = 6;
 extern const float edgeThreshold = 0.1;
 extern const float surfThreshold = 0.1;
-extern const float nearestFeatureSearchSqDist = 25;
+//Modified in order to allow it to detect features further away (lidar range is 100m)
+extern const float nearestFeatureSearchSqDist = 70;
 
 
 // Mapping Params
 extern const float surroundingKeyframeSearchRadius = 50.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
 extern const int   surroundingKeyframeSearchNum = 50; // submap size (when loop closure enabled)
 // history key frames (history submap for loop closure)
-extern const float historyKeyframeSearchRadius = 7.0; // key frame that is within n meters from current pose will be considerd for loop closure
+extern const float historyKeyframeSearchRadius = 10.0; // key frame that is within n meters from current pose will be considerd for loop closure
 extern const int   historyKeyframeSearchNum = 25; // 2n+1 number of hostory key frames will be fused into a submap for loop closure
 extern const float historyKeyframeFitnessScore = 0.3; // the smaller the better alignment
 
